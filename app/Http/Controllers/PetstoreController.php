@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PetFormRequest;
 use App\Models\PetsApi;
-use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 
 class PetstoreController extends Controller
@@ -21,6 +20,8 @@ class PetstoreController extends Controller
      */
     public function index()
     {
+        // wyświetla zwierzęta po statusie, domyślnie ładuje ze statusem "available"
+        
         $status = request()->input('status');
 
         $status = in_array($status, ['available', 'pending', 'sold']) ? $status : 'available';

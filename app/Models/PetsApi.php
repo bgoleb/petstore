@@ -19,7 +19,7 @@ class PetsApi
 
     public function findByStatus($status) : array
     {
-        $url = $this->baseUrl."/findByStatus?status=$status";
+        $url = $this->baseUrl."/findByStatus?status=".$status;
 
         $response = Http::get($url);
 
